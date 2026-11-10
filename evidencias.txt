@@ -1,0 +1,20 @@
+EJERCICIO 1. BOLETOS DE CINE
+
+Andrea - Sala 2, 18:00: $90.00
+Bruno - Sala 2, 18:00: $63.00
+Carla - Sala 5, 20:30: $0.00
+Diana - Sala 1, 16:00: $45.00
+
+
+EJERCICIO 2. ESTACIONAMIENTO
+
+ABC-123 (3 h): $60.00
+XYZ-789 (24 h): $250.00
+JKL-456 (5 h): $150.00
+
+
+RETO DEL EJERCICIO 2
+
+Estancia("MNO-111", 0)
+
+ValueError: Las horas deben ser mayores que cero

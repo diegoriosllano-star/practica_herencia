@@ -1,0 +1,83 @@
+REGISTRO DEL EQUIPO
+
+
+EJERCICIO 1. BOLETOS DE CINE
+
+¿La salida coincide con la esperada?
+Sí.
+
+¿Las clases hijas llaman a super().__init__()?
+Sí.
+
+¿BoletoEstudiante usa super() para calcular el precio?
+Sí.
+
+¿De qué clase heredó BoletoTerceraEdad y por qué?
+Heredó de BoletoEstudiante porque ambas clases trabajan con un descuento
+sobre el precio normal. De esta manera se reutiliza el mismo cálculo y
+únicamente se cambia el porcentaje de descuento al 50%.
+
+Sugerencias de Copilot que rechazaron y por qué:
+No se agregaron métodos, atributos ni clases adicionales que no estuvieran
+solicitados en la especificación.
+
+
+EJERCICIO 2. ESTACIONAMIENTO
+
+¿La salida coincide con la esperada?
+Sí.
+
+¿Las clases hijas llaman a super().__init__()?
+Sí.
+
+¿EstanciaNocturna usa super() para calcular el cobro?
+Sí.
+
+¿En qué clase escribieron la validación y por qué?
+La validación se escribió en la clase Estancia, dentro de su constructor,
+porque es la clase padre. Así la validación se realiza en un solo lugar y
+también aplica a las clases hijas cuando utilizan super().__init__().
+
+Sugerencias de Copilot que rechazaron y por qué:
+No se agregaron validaciones, métodos ni cálculos adicionales que no fueran
+solicitados en la especificación.
+
+
+PREGUNTAS DE COMPRENSIÓN
+
+1. En cada ejercicio, ¿qué clase sobrescribe el cálculo reemplazándolo
+y cuál lo extiende con super()?
+
+En el ejercicio de boletos, BoletoCortesia reemplaza el cálculo y
+BoletoEstudiante lo extiende utilizando super().
+
+En el ejercicio de estacionamiento, EstanciaPension reemplaza el cálculo
+y EstanciaNocturna lo extiende utilizando super().
+
+
+2. ¿Por qué ninguna clase hija necesita escribir ticket()?
+
+Porque ticket() se hereda de la clase padre. El método utiliza calcular_precio()
+o cobrar() según corresponda al objeto, por lo que cada clase hija puede obtener
+un resultado diferente sin volver a escribir ticket().
+
+
+3. EstanciaPension no recibe horas en su constructor.
+¿De dónde salen las 24 horas que aparecen en el ticket?
+
+Salen de su constructor, donde se llama:
+
+super().__init__(placa, 24)
+
+De esta manera la clase padre guarda automáticamente 24 en el atributo horas.
+
+
+4. Si mañana la tarifa por hora sube a $25,
+¿cuántas líneas hay que cambiar en su código? ¿Por qué?
+
+Solo se necesita cambiar una línea en el método cobrar() de la clase Estancia,
+cambiando 20 por 25.
+
+Esto funciona porque EstanciaNocturna utiliza super().cobrar() y reutiliza
+el cálculo de Estancia. EstanciaPension no cambia porque tiene una tarifa
+fija de $250.
